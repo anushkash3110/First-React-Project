@@ -1,4 +1,5 @@
-import './App.css'
+import './App.css';
+import Home from './Home';
 
 function App() {
   const title = 'Welcome to the new blog';
@@ -8,14 +9,12 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <h1>{title}</h1>
-        <p>Liked by {likes} people</p>
+        <Home />
 
-        <p>{10}</p>
-        
+      
       </div>
     </div>
   )
 }
 
-export default App
+export default App;
