@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* base styles */
+body{
+  background-color: #ced2ff;
+}
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #333;
-  background-color: #ced2ff;
 }
 
 .navbar {
@@ -49,4 +51,20 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* blog preview / list */
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #b1b7c9;
+}
+.blog-preview:hover {
+  box-shadow: 1px 1px 3px rgba(104, 100, 222, 0.5);
+}
+
+.blog-preview h2 {
+  font-size: 20px;
+  color: #170e75;
+  margin-bottom: 8px;
 }
