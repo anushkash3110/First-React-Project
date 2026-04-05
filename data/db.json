@@ -20,14 +20,8 @@
       "content": "I just had my first trip to the beach and it was amazing! The weather was perfect and the water was so refreshing. I had a great time swimming and soaking up the sun. I also tried some delicious seafood at a local restaurant. It was a wonderful experience and I can't wait to go back again soon. I am really looking forward to sharing more about my life and experiences with you all. Stay tuned for more updates and stories from my life.",
       "author": "Emily Johnson",
       "date": "2024-06-03"
-    },
-    {
-      "title": "gerge",
-      "body": "grdgedr",
-      "author": "gdtrtg",
-      "date": "2026-04-10",
-      "id": "u_jEDAFAcDY"
     }
+
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }
