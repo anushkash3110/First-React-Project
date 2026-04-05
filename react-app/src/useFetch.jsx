@@ -20,17 +20,16 @@ const useFetch = (url) => {
             .then(data => {
                 setData(data);
                 setIsPending(false);
-                setError(null);
             })
             
             .catch((err) => {
-                if(err.name === 'AbortError'){
-                    console.log('fetch aborted');
-                }else {
-                setIsPending(false);
-                setError(err.message);
-                }
-            })
+  if (err.name === 'AbortError') {
+    console.log('fetch aborted');
+  } else {
+    setError("Backend not available");
+    setIsPending(false);
+  }
+});
         }, 1000);
 
         return () => abortCont.abort();
