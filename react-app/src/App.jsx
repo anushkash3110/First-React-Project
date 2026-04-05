@@ -1,22 +1,25 @@
 import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Create from './create';
+import BlogDetails from './BlogDetails';
 
 function App() {
-  const title = 'Welcome to the new blog';
-  const likes = 50;
- // const person = { name: 'Anushka', age: 25 };  we can not use this,bcs it is an object and we can not render an object directly in JSX, we need to convert it to a string or use its properties to render <it className=""></it>
-
   return (
-    <div className="App">
-      <Navbar />    
-      <div className="content">
-        <Home />
-
-      
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/blogs/:id" element={<BlogDetails />} />
+          </Routes>
+        </div>
       </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
 export default App;

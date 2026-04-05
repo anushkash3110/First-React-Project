@@ -182,3 +182,18 @@
     border-right-color: var(--border);
   }
 }
+
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-preview h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: rgb(31, 6, 113);
+}
+
+.blog-preview a{
+  text-decoration: none;
+  color: inherit;
+}
