@@ -3,12 +3,31 @@ import { useState } from "react";
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('mario');
+    const [author, setAuthor] = useState('');
+    const [date, setDate] = useState('');   
+    const [isPending, setIsPending] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const blog = { title, body, author, date };
+        setIsPending(true);
+
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(blog)
+        }).then(() => {
+            console.log('new blog added');
+            setIsPending(false);
+        })
+
+    };
+
 
     return (
         <div className="create">
             <h2>Add a new blog</h2>
-            <form>
+            <form onSubmit ={handleSubmit}>
 
                 <label>Blog title:</label>
                 <input 
@@ -26,21 +45,25 @@ const Create = () => {
                 ></textarea>
 
                 <label>Blog author:</label>
-
-                <select
+                <input 
+                type="text" 
+                required 
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
-                >
-                    <option value="mario">Mario</option>
-                    <option value="yoshi">Yoshi</option>
-                </select>
+                />
 
-                <button>Add Blog</button>
-                
-                <p>{ title }</p>
-                <p>{ body }</p>
-                <p>{ author }</p>
+                <label>Publish date:</label>
+                <input 
+                type="date" 
+                required 
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                />
 
+
+               { !isPending && <button>Add Blog</button> }
+               { isPending && <button disabled>Adding Blog...</button> }
+               
             </form>
         </div>
     );
